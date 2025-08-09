@@ -47,4 +47,8 @@ app.post('/chart', async (req, res) => {
   res.send(Buffer.from(screenshot, 'base64'));
 });
 
-app.listen(3001, () => console.log('📊 Google Chart API running at http://localhost:3001/chart'));
+// app.listen(3001, () => console.log('📊 Google Chart API running at http://localhost:3001/chart'));
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`📊 Google Chart API running at http://localhost:${PORT}/chart`);
+});
